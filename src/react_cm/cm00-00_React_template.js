@@ -5,8 +5,16 @@ TODO
  */
 // TODO
 
+import React from 'react';
+// import ReactDOM from 'react-dom/client'; //! 1-й вариант: ReactDOM.createRoot(document.getElementById("root")).render(image);
+import ReactDOM from 'react-dom'; //! 2-й вариант: ReactDOM.render(image, document.querySelector("#root"));
 
-//! ___События. Метод addEventListener()___
+/*
+* -
+! ========================================
+ */
+
+//! ___React-элементы___
 
 
 

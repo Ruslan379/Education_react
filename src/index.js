@@ -2,9 +2,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './react_cm/cm01-1_React';
-// import './react_cm/cm01-2_React';
-// import './react_cm/cm02-1_React';
+
+// import './react_cm/cm01-01_React';
+import './react_cm/cm01-02_React';
+// import './react_cm/cm02-01_React';
 
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
