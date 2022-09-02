@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from 'react';
 import React, { Component } from "react";
 import useLocalStorage from '../hooks/useLocalStorage';
 
@@ -280,12 +280,12 @@ export function SignupForm() {
     };
 
     useEffect(() => {
-        console.log("email useEffect"); //!
+        // console.log("email useEffect"); //!
         localStorage.setItem("email", JSON.stringify(email));
     }, [email]);
 
     useEffect(() => {
-        console.log("password useEffect"); //!
+        // console.log("password useEffect"); //!
         localStorage.setItem("password", JSON.stringify(password));
     }, [password]);
 
@@ -327,7 +327,42 @@ export function SignupForm() {
 ! ========================================
  */
 
+//! ___useEffect и пропуск первого рендера___
 
+const styles = {
+    code: {
+        display: 'inline-flex',
+        padding: 4,
+        borderRadius: 4,
+        backgroundColor: '#ddd',
+        fontWeight: 700,
+    },
+};
+
+export function SkipEffectOnFirstRender() {
+    const [count, setCount] = useState(0);
+    const isFirstRender = useRef(true);
+
+    useEffect(() => {
+        if (isFirstRender.current) {
+            console.log('isFirstRender: ', isFirstRender);
+            isFirstRender.current = false;
+            return;
+        }
+
+        console.log(`Выполняется useEffect - ${Date.now()}`);
+    });
+
+    return (
+        <div>
+            <button onClick={() => setCount(c => c + 1)}>{count}</button>
+            <p>
+                <code style={styles.code}>useEffect</code> этого компонента не
+                выполняется на первом рендере
+            </p>
+        </div>
+    );
+}
 
 /*
 * - 

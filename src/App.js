@@ -4,7 +4,15 @@ import logo from './logo.svg';
 import './App.css';
 
 
-import { App1, App6, App7, OldCounter, Counter, SignupForm } from './react_cm/cm04-07&08_React';
+import {
+  App1,
+  App6,
+  App7,
+  OldCounter,
+  Counter,
+  SignupForm,
+  SkipEffectOnFirstRender
+} from './react_cm/cm04-07&08_React';
 
 function App() {
   return (
@@ -55,6 +63,11 @@ function App() {
       <div>
         <h2>SignupForm</h2>
         <SignupForm />
+      </div>
+
+      <div>
+        <h2>useEffect и пропуск первого рендера</h2>
+        <SkipEffectOnFirstRender />
       </div>
 
     </>
