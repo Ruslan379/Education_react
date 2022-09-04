@@ -11,7 +11,8 @@ import {
   OldCounter,
   Counter,
   SignupForm,
-  SkipEffectOnFirstRender
+  SkipEffectOnFirstRender,
+  Friends
 } from './react_cm/cm04-07&08_React';
 
 function App() {
@@ -68,6 +69,11 @@ function App() {
       <div>
         <h2>useEffect и пропуск первого рендера</h2>
         <SkipEffectOnFirstRender />
+      </div>
+
+      <div>
+        <h2>useMemo и 100 друзей</h2>
+        <Friends />
       </div>
 
     </>
